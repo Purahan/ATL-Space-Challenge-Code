@@ -2,6 +2,8 @@
 $headerClass='';
 $file='';
 $activeClass="";
+$sign_in_active='';
+$register_active='';
 if(strpos($_SERVER["SCRIPT_FILENAME"], 'index.php')!==false) {
   $headerClass='header-transparent';
   $activeClass=" active";
@@ -9,6 +11,12 @@ if(strpos($_SERVER["SCRIPT_FILENAME"], 'index.php')!==false) {
 if(strpos($_SERVER["SCRIPT_FILENAME"], 'index.php')===false) {
   $file="index.php";
   $headerClass='header-inner-pages ';
+}
+if(strpos($_SERVER["SCRIPT_FILENAME"], 'sign-in.php') !== false) {
+  $sign_in_active='active';
+}
+if(strpos($_SERVER["SCRIPT_FILENAME"], 'sign-up.php') !== false) {
+  $register_active='active';
 }
 ?>
     <!-- ======= Header ======= -->
