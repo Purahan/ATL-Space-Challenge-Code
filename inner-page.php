@@ -16,10 +16,10 @@
         </div>
       </section><!-- End Breadcrumbs -->
 
-      <!-- ======= Blog Section ======= -->
-      <section >
+      <!-- ======= Main Section ======= -->
+      <section id="main">
         
-      </section><!-- End Blog Section -->
+      </section><!-- End Main Section -->
 
     </main><!-- End #main -->
 <?php
