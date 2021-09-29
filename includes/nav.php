@@ -8,19 +8,17 @@
   if(strpos($_SERVER["SCRIPT_FILENAME"], 'index.php')!==false) {
     $headerClass='header-transparent';
     $activeClass=" active";
+    $file="#hero";
   }
   if(strpos($_SERVER["SCRIPT_FILENAME"], 'index.php')===false) {
     $file="index.php";
     $headerClass='header-inner-pages ';
   }
-  if(strpos($_SERVER["SCRIPT_FILENAME"], 'sign-in.php') !== false) {
-    $sign_in_active='active';
-  }
   if(strpos($_SERVER["SCRIPT_FILENAME"], 'sign-up.php') !== false) {
     $register_active='active';
   }
   if(!isset($_SESSION["id"]) === true) {
-    // include('includes/sign-in-modal.php');
+    include('includes/sign-in-modal.php');
     $session='none';
   }
 ?>
@@ -34,23 +32,24 @@
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto<?=$activeClass?>" href="<?=$file?>#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="<?=$file?>#about">About</a></li>
-            <li><a class="nav-link scrollto" href="<?=$file?>#services">Services</a></li>
-            <li><a class="nav-link scrollto " href="<?=$file?>#portfolio">Portfolio</a></li>
-            <li><a class="nav-link scrollto" href="<?=$file?>#team">Team</a></li>
-            <li><a class="nav-link scrollto" href="<?=$file?>#contact">Contact Us</a></li>
+            <li><a class="nav-link scrollto<?=$activeClass?>" href="<?=$file?>">Home</a></li>
+            
             <?php 
               if($session == "none") {
                 echo '
-                <li><a class="nav-link <?=$sign_in_active?>" href="#">Sign In</a></li>
+                <li><a class="nav-link scrollto" href="<?=$file?>#about">About</a></li>
+                <li><a class="nav-link scrollto" href="<?=$file?>#services">Services</a></li>
+                <li><a class="nav-link scrollto " href="<?=$file?>#portfolio">Portfolio</a></li>
+                <li><a class="nav-link scrollto" href="<?=$file?>#team">Team</a></li>
+                <li><a class="nav-link scrollto" href="<?=$file?>#contact">Contact Us</a></li>
+                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-signin">Login</a></li>
                 <li><a class="nav-link <?=$register_active?>" href="#">Register</a></li>';
               }
               else {
                 echo '
-                <li><a class="nav-link <?=$sign_in_active?>" href="#">Conacts</a></li>
-                <li><a class="nav-link <?=$sign_in_active?>" href="#">Messages</a></li>
-                <li><a class="nav-link <?=$register_active?>" href="#">Chat</a></li>';
+                <li><a class="nav-link" href=profile.php">My Profile</a></li>
+                <li><a class="nav-link" href="#">My Conacts</a></li>
+                <li><a class="nav-link" href="msgs.php">Messages</a></li>';
               }
             ?>
           </ul>

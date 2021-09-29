@@ -6,35 +6,14 @@
 
       <!-- ======= Blog Section ======= -->
       <section id="main">
-        <div class="d-flex mx-5 mt-5 flex-column h-100 bg-light rounded-3 shadow-lg p-4">
+        <div class="d-flex mx-0 mx-md-5 mt-1 mt-md-3 flex-column h-100 bg-light rounded-3 shadow-lg p-4">
           <div class="py-2 p-md-3">
-            <!-- Title + Compose button-->
+            <!-- Title + add contact button-->
             <div class="d-sm-flex align-items-center justify-content-between pb-2 text-center text-sm-start">
               <h1 class="h3 mb-3 text-nowrap">Your messages<span class="d-inline-block align-middle bg-faded-success text-success fs-ms fw-medium rounded-1 py-1 px-2 ms-2">1</span></h1>
-              <div class="mb-3"><a class="btn btn-translucent-primary" href="#message-compose" data-bs-toggle="collapse"><i class="bi bi-plus"></i>Compose</a></div>
+              <div class="mb-3"><a class="btn btn-outline-pink"><i class="bi bi-plus"></i>Add Contact</a></div>
             </div>
-            <!-- Message compose form-->
-            <div class="collapse" id="message-compose">
-              <form class="needs-validation shadow rounded mb-4" novalidate="">
-                <div class="d-flex align-items-center justify-content-between bg-dark rounded-top py-3 px-4">
-                  <h3 class="fs-base text-light mb-0">New message</h3><a class="btn-close btn-close-white" href="#message-compose" data-bs-toggle="collapse"></a>
-                </div>
-                <div class="p-4">
-                  <div class="mb-3 pb-1">
-                    <input class="form-control" type="text" placeholder="To" required="">
-                    <div class="invalid-feedback">Please provide recipient(s) of your message!</div>
-                  </div>
-                  <div class="mb-3 pb-1">
-                    <input class="form-control bg-image-0" type="text" placeholder="Subject">
-                  </div>
-                  <div class="mb-3 pb-1">
-                    <textarea class="form-control" rows="5" required=""></textarea>
-                    <div class="invalid-feedback">Please write your message!</div>
-                  </div>
-                  <button class="btn btn-primary" type="submit"><i class="ai-send fs-lg me-2"></i>Send</button>
-                </div>
-              </form>
-            </div>
+            
             <!-- Toolbar-->
             <div class="d-flex align-items-center justify-content-between bg-secondary-msg py-2 px-3">
               <div class="py-1">
@@ -67,17 +46,20 @@
                       <label class="form-check-label" for="message-1"></label>
                     </div>
                   </td>
-                  <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                    <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/01.jpg" alt="Edward Johnson" width="42">
+                  <td class="py-3 align-middle">
+                    <a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
+                      <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/01.jpg" alt="Edward Johnson" width="42">
                       <div class="fs-sm ps-sm-3">
                         <div class="d-sm-flex text-heading align-items-center">
                           <div class="d-flex align-items-center">
                             <div class="text-truncate fw-semibold" style="max-width: 10rem;">Edward Johnson</div><span class="nav-indicator"></span>
                           </div>
-                          <div class="ms-sm-auto text-muted position-absolute fs-xs end-8">Aug 13,2020</div>
+                          <div class="ms-sm-auto text-muted fs-xs position-absolute top-38 end-8">Aug 13,2020</div>
                         </div>
-                        <div class="pt-1 text-heading">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</div>
-                      </div></a></td>
+                        <div class="pt-1 text-heading d-inline-block text-truncate w-50">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</div>
+                      </div>
+                    </a>
+                  </td>
                 </tr>
                 <!-- Message-->
                 <tr id="item-message-2">
