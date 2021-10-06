@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!---meta tags--->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!---css--->
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+</style>
+<!---css--->
+</head>
+<body>
+
+<h3>Egalitarian</h3>
+<!---username--->
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">Username</label>
+    <input type="text" id="fname" name="firstname" placeholder="Username">
+<!---location--->
+    <label for="lname">Your Location</label>
+    <select id="lname" name="lname" >
+      <option value="select">Select</option>
+      <option value="Spaceship">Space station</option>
+      <option value="planet">Planet</option>
+      <option value="rocket">Rocket</option>
+      <option value="sapce walk">Space walk</option>
+      <option value="moon">Moon</option>
+    </select>
+<!---recevier--->
+    <label for="country">Recevier</label>
+    <select id="country" name="country">
+      <option value="select">Select</option>
+      <option value="nasa">National Aeronautics and Space Administration</option>
+      <option value="esa">European Space Agency</option>
+      <option value="csa">Canadian Space Agency</option>
+      <option value="jaxa">Japan Aerospace Exploration Agency</option>
+      <option value="cnsa">China National Space Administration</option>
+      <option value="isro">Indian Space Research Organisation
+    </select>
+
+    
+<!---submit--->
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+<!---css--->
+<style>
+  
+  
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px; 
+  border: 2px solid #ccc; 
+  border-radius: 6px; 
+  box-sizing: border-box;
+  margin-top: 16px; 
+  margin-bottom: 16px; 
+  
+}
+
+
+input[type=submit] {
+  background-color: #6a94b0;
+  color: white;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+  background-color: ##405a6b;
+}
+
+
+.container {
+  border-radius: 10px;
+  background-color: #e0f3ff;
+  padding: 200px;
+}
+
+    </style>
+<!---css end--->
+</html>
