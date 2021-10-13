@@ -11,7 +11,7 @@
             <!-- Title + add contact button-->
             <div class="d-sm-flex align-items-center justify-content-between pb-2 text-center text-sm-start">
               <h1 class="h3 mb-3 text-nowrap">Your messages<span class="d-inline-block align-middle bg-faded-success text-success fs-ms fw-medium rounded-1 py-1 px-2 ms-2">1</span></h1>
-              <div class="mb-3"><a class="btn btn-outline-pink"><i class="bi bi-plus"></i>Add Contact</a></div>
+              <div class="mb-3"><a class="btn btn-outline-pink" href="add-contact.php"><i class="bi bi-plus"></i>Add Contact</a></div>
             </div>
             
             <!-- Toolbar-->
@@ -38,205 +38,64 @@
             <!-- Message list (table)-->
             <table class="table table-hover border-bottom">
               <tbody id="message-list">
-                <!-- Message-->
-                <tr id="item-message-1">
-                  <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
-                    <div class="form-check ms-2 me-0">
-                      <input class="form-check-input" type="checkbox" id="message-1" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-1">
-                      <label class="form-check-label" for="message-1"></label>
-                    </div>
-                  </td>
-                  <td class="py-3 align-middle">
-                    <a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                      <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/01.jpg" alt="Edward Johnson" width="42">
-                      <div class="fs-sm ps-sm-3">
-                        <div class="d-sm-flex text-heading align-items-center">
-                          <div class="d-flex align-items-center">
-                            <div class="text-truncate fw-semibold" style="max-width: 10rem;">Edward Johnson</div><span class="nav-indicator"></span>
-                          </div>
-                          <div class="ms-sm-auto text-muted fs-xs position-absolute top-38 end-8">Aug 13,2020</div>
+
+              <?php
+                if ($msgs_contacts && $msgs_contacts->num_rows > 0 ) {
+                    while($row = $msgs_contacts->fetch_assoc()) {
+                      $numMSG = $msgs_contacts->num_rows;
+                      echo '
+                    <!-- Message -->
+                    <tr id="item-message-2">
+                      <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
+                        <div class="form-check ms-2 me-0">
+                          <input class="form-check-input" type="checkbox" id="message-2" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-2">
+                          <label class="form-check-label" for="message-2"></label>
                         </div>
-                        <div class="pt-1 text-heading d-inline-block text-truncate w-50">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium...</div>
-                      </div>
-                    </a>
-                  </td>
-                </tr>
-                <!-- Message-->
-                <tr id="item-message-2">
-                  <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
-                    <div class="form-check ms-2 me-0">
-                      <input class="form-check-input" type="checkbox" id="message-2" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-2">
-                      <label class="form-check-label" for="message-2"></label>
-                    </div>
-                  </td>
-                  <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                    <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/02.jpg" alt="Emilia Young" width="42">
-                      <div class="fs-sm ps-sm-3">
-                        <div class="d-sm-flex text-heading align-items-center">
-                          <div class="d-flex align-items-center">
-                            <div class="text-truncate" style="max-width: 10rem;">Emilia Young</div>
-                          </div>
-                          <div class="ms-sm-auto text-muted fs-xs position-absolute end-8">Aug 05,2020</div>
-                        </div>
-                        <div class="pt-1 text-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque...</div>
-                      </div></a></td>
-                </tr>
-                <!-- Message-->
-                <tr id="item-message-3">
-                  <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
-                    <div class="form-check ms-2 me-0">
-                      <input class="form-check-input" type="checkbox" id="message-3" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-3">
-                      <label class="form-check-label" for="message-3"></label>
-                    </div>
-                  </td>
-                  <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                    <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/03.jpg" alt="The Art Studio Inc." width="42">
-                      <div class="fs-sm ps-sm-3">
-                        <div class="d-sm-flex text-heading align-items-center">
-                          <div class="d-flex align-items-center">
-                            <div class="text-truncate" style="max-width: 10rem;">The Art Studio Inc.</div>
-                          </div>
-                          <div class="ms-sm-auto text-muted fs-xs position-absolute end-8">Jul 18,2020</div>
-                        </div>
-                        <div class="pt-1 text-body">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae...</div>
-                      </div></a></td>
-                </tr>
-                <!-- Message-->
-                <tr class="bg-faded-primary" id="item-message-4">
-                  <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
-                    <div class="form-check ms-2 me-0">
-                      <input class="form-check-input" type="checkbox" id="message-4" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-4" checked="">
-                      <label class="form-check-label" for="message-4"></label>
-                    </div>
-                  </td>
-                  <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                    <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/04.jpg" alt="Felicity Coleman" width="42">
-                      <div class="fs-sm ps-sm-3">
-                        <div class="d-sm-flex text-heading align-items-center">
-                          <div class="d-flex align-items-center">
-                            <div class="text-truncate" style="max-width: 10rem;">Felicity Coleman</div>
-                          </div>
-                          <div class="ms-sm-auto text-muted fs-xs position-absolute end-8">Jul 10,2020</div>
-                        </div>
-                        <div class="pt-1 text-body">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit...</div>
-                      </div></a></td>
-                </tr>
-                <!-- Message-->
-                <tr id="item-message-5">
-                  <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
-                    <div class="form-check ms-2 me-0">
-                      <input class="form-check-input" type="checkbox" id="message-5" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-5">
-                      <label class="form-check-label" for="message-5"></label>
-                    </div>
-                  </td>
-                  <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                    <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/05.jpg" alt="Mike Rogers" width="42">
-                      <div class="fs-sm ps-sm-3">
-                        <div class="d-sm-flex text-heading align-items-center">
-                          <div class="d-flex align-items-center">
-                            <div class="text-truncate" style="max-width: 10rem;">Mike Rogers</div>
-                          </div>
-                          <div class="ms-sm-auto text-muted fs-xs position-absolute end-8">Jun 30,2020</div>
-                        </div>
-                        <div class="pt-1 text-body">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus...</div>
-                      </div></a></td>
-                </tr>
-                <!-- Message-->
-                <tr id="item-message-6">
-                  <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
-                    <div class="form-check ms-2 me-0">
-                      <input class="form-check-input" type="checkbox" id="message-6" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-6">
-                      <label class="form-check-label" for="message-6"></label>
-                    </div>
-                  </td>
-                  <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                    <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/06.jpg" alt="Jeffrey Henderson" width="42">
-                      <div class="fs-sm ps-sm-3">
-                        <div class="d-sm-flex text-heading align-items-center">
-                          <div class="d-flex align-items-center">
-                            <div class="text-truncate" style="max-width: 10rem;">Jeffrey Henderson</div>
-                          </div>
-                          <div class="ms-sm-auto text-muted fs-xs position-absolute end-8">Jun 26,2020</div>
-                        </div>
-                        <div class="pt-1 text-body">Et harum quidem rerum facilis est et expedita distinctio deleniti atque corrupti quos...</div>
-                      </div></a></td>
-                </tr>
-                <!-- Message-->
-                <tr id="item-message-7">
-                  <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
-                    <div class="form-check ms-2 me-0">
-                      <input class="form-check-input" type="checkbox" id="message-7" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-7">
-                      <label class="form-check-label" for="message-7"></label>
-                    </div>
-                  </td>
-                  <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                    <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/07.jpg" alt="Maria Sanchez" width="42">
-                      <div class="fs-sm ps-sm-3">
-                        <div class="d-sm-flex text-heading align-items-center">
-                          <div class="d-flex align-items-center">
-                            <div class="text-truncate" style="max-width: 10rem;">Maria Sanchez</div>
-                          </div>
-                          <div class="ms-sm-auto text-muted fs-xs position-absolute end-8">Jun 14,2020</div>
-                        </div>
-                        <div class="pt-1 text-body">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus...</div>
-                      </div></a></td>
-                </tr>
-                <!-- Message-->
-                <tr id="item-message-8">
-                  <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
-                    <div class="form-check ms-2 me-0">
-                      <input class="form-check-input" type="checkbox" id="message-8" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-8">
-                      <label class="form-check-label" for="message-8"></label>
-                    </div>
-                  </td>
-                  <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                    <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/08.jpg" alt="Best Ever Company Ltd." width="42">
-                      <div class="fs-sm ps-sm-3">
-                        <div class="d-sm-flex text-heading align-items-center">
-                          <div class="d-flex align-items-center">
-                            <div class="text-truncate" style="max-width: 10rem;">Best Ever Company Ltd.</div>
-                          </div>
-                          <div class="ms-sm-auto text-muted fs-xs position-absolute end-8">Jun 08,2020</div>
-                        </div>
-                        <div class="pt-1 text-body">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit aliquid...</div>
-                      </div></a></td>
-                </tr>
-                <!-- Message-->
-                <tr id="item-message-9">
-                  <td class="py-3 align-middle ps-2 pe-0" style="width: 2.5rem;">
-                    <div class="form-check ms-2 me-0">
-                      <input class="form-check-input" type="checkbox" id="message-9" data-checkbox-toggle-class="bg-faded-primary" data-bs-target="#item-message-9">
-                      <label class="form-check-label" for="message-9"></label>
-                    </div>
-                  </td>
-                  <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none" href="#">
-                    <img class="rounded-circle mb-2 me-3 mb-sm-0" src="https://around.createx.studio/img/dashboard/messages/09.jpg" alt="Daniel Adams" width="42">
-                      <div class="fs-sm ps-sm-3">
-                        <div class="d-sm-flex text-heading align-items-center">
-                          <div class="d-flex align-items-center">
-                            <div class="text-truncate" style="max-width: 10rem;">Daniel Adams</div>
-                          </div>
-                          <div class="ms-sm-auto text-muted fs-xs position-absolute end-8">May 23,2020</div>
-                        </div>
-                        <div class="pt-1 text-body">Reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores...</div>
-                      </div></a></td>
-                </tr>
+                      </td>
+                      <td class="py-3 align-middle"><a class="d-block d-sm-flex align-items-center text-decoration-none link-dark" href="chat.php?with='.$row['id'].'">
+                        <img class="rounded-circle mb-2 me-3 mb-sm-0" src="'.$row['profile_pic'].'" alt="'.$row['name'].'" width="42">
+                        '.$row['name'].'
+                          <div class="fs-sm ps-sm-3">
+                            <div class="d-sm-flex text-heading align-items-center">
+                              <div class="ms-sm-auto text-muted fs-xs position-absolute end-8 top-10">Aug 05,2020</div>
+                            </div>
+                            <div class="pt-1 text-body text-muted">'.$row["status"].'</div>
+                          </div></a></td>
+                    </tr>';
+                  }
+                }
+                else {
+                  echo "You don't have any <a href='contacts.php'>contacts</a> saved. Please <a href='add-contact.php'>Create a new contact</a>, to chat with anyone.";
+                }
+              ?>
               </tbody>
             </table>
             <!-- Pagination-->
             <nav class="d-md-flex justify-content-between align-items-center text-center text-md-start pt-3">
-              <div class="d-md-flex align-items-center w-100"><span class="fs-sm text-muted me-md-3">Showing 9 of 84 messages</span>
+              <div class="d-md-flex align-items-center w-100"><span class="fs-sm text-muted me-md-3">Showing 1 of 1 messages</span>
                 <div class="progress w-100 my-3 mx-auto mx-md-0" style="max-width: 10rem; height: 4px;">
-                  <div class="progress-bar" role="progressbar" style="width: 12%;background-color: #e43c5c;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" style="width: 100%;background-color: #e43c5c;" aria-valuenow="" aria-valuemin="0" aria-valuemax="<?=$numMSG?>"></div>
                 </div>
               </div>
-              <button class="btn btn-outline-pink fs-sm" type="button">Load older messages</button>
             </nav>
           </div>
         </div>
       </section><!-- End Blog Section -->
 
     </main><!-- End #main -->
-<?php
-  include('includes/footer.php');
-?>
+    
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

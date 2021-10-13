@@ -1,7 +1,7 @@
 <section class="msger">
   <header class="msger-header">
     <div class="msger-header-title">
-      <i class="fas fa-comment-alt"></i> Tempo
+      <i class="fas fa-comment-alt"></i> Egalitarian
     </div>
     <div class="msger-header-options">
       <span><i class="fas fa-cog"></i></span>
@@ -22,8 +22,21 @@
         </div>
 
         <div class="msg-text">
-          Hi, welcome to tempo! Go ahead and send me a message. 😄
+          Hi, welcome to Egalitarian! Go ahead and send me a message. 😄
         </div>
+      </div>
+    </div>
+    
+    <div class="msg right-msg">
+      <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)"></div>
+
+      <div class="msg-bubble">
+        <div class="msg-info">
+          <div class="msg-info-name">User</div>
+          <div class="msg-info-time">18:12</div>
+        </div>
+
+        <div class="msg-text">Hi, how are you?</div>
       </div>
     </div>
 
@@ -209,7 +222,7 @@ const BOT_MSGS = [
   "I feel sleepy! :("
 ];
 
-// Icons made by Freepik from www.flaticon.com
+
 const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
 const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
 const BOT_NAME = "BOT";
@@ -243,7 +256,6 @@ function appendMessage(name, img, side, text) {
       </div>
     </div>
   `;
-
   msgerChat.insertAdjacentHTML("beforeend", msgHTML);
   msgerChat.scrollTop += 500;
 }
