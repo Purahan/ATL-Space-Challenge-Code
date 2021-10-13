@@ -208,10 +208,25 @@
 })()
 
 function pwd_visible() {
-  var pwd = document.getElementById("pwd");
-  if (pwd.type === "password") {
-      pwd.type = "text";
-  } else {
-      pwd.type = "password";
+  let pwd = document.getElementById("pwd");
+  if (pwd.type == "password") {
+    pwd.type = "text";
   }
+  else {
+    pwd.type = "password";
+  }
+}
+
+function pwd_visible_up() {
+  let pwd = document.getElementById("up-pwd");
+  if (pwd.type == "password") {
+    pwd.type = "text";
+  }
+  else {
+    pwd.type = "password";
+  }
+}
+
+function img_changed() {
+  document.getElementById("profile-pic-img").scr = doucument.getElementById("profile-pic").value;
 }
