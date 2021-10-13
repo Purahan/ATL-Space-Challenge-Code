@@ -17,14 +17,14 @@
           <div class="row">
 
             <div class="col-lg-3 col-md-6 footer-contact">
-              <h3>Tempo</h3>
+              <h3>Egalitarian</h3>
               <p>
                 CHitkara International School, <br>
                 Sector-25 West<br>
                 Chandigarh, CH 160014<br>
                 India <br><br>
                 <strong>Phone:</strong> +91 95011 05703<br>
-                <strong>Email:</strong> info@Tempo.com<br>
+                <strong>Email:</strong> info@Egalitarian.com<br>
               </p>
             </div>
 
@@ -51,7 +51,7 @@
                   else {
                     echo '
                     <li><i class="bx bx-chevron-right"></i> <a href="#">Chat</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">My Contacts</a></li>';
+                    <li><i class="bx bx-chevron-right"></i> <a href="contacts">My Contacts</a></li>';
                   }
                 ?>
               </ul>
@@ -59,7 +59,7 @@
 
             <div class="col-lg-4 col-md-6 footer-newsletter">
               <h4>Join Our Newsletter</h4>
-              <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+              <p>Join our newletter and get notified about our latest updates</p>
               <form action="" method="post">
                 <input type="email" name="email" placeholder="Please type Your Email"><input type="submit" value="Subscribe">
               </form>
@@ -73,7 +73,7 @@
 
         <div class="me-md-auto text-center text-md-start">
           <div class="copyright">
-            &copy; Copyright <strong><span>Tempo</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>Egalitarian</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
             Basic CSS from <a href="http://getbootstrap.com/">Bootstrap</a>.<br />
@@ -81,10 +81,10 @@
           </div>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
-          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bi bi-envelope"></i></a>
+          <a href="" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.facebook.com/ChitkaraSchool/" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/chitkaraschool/" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="" class="google-plus"><i class="bi bi-envelope"></i></a>
         </div>
       </div>
     </footer><!-- End Footer -->

@@ -2,8 +2,6 @@
   $headerClass='';
   $file='';
   $activeClass="";
-  $sign_in_active='';
-  $register_active='';
   $session='';
   if(strpos($_SERVER["SCRIPT_FILENAME"], 'index.php')!==false) {
     $headerClass='header-transparent';
@@ -14,11 +12,9 @@
     $file="index.php";
     $headerClass='header-inner-pages ';
   }
-  if(strpos($_SERVER["SCRIPT_FILENAME"], 'sign-up.php') !== false) {
-    $register_active='active';
-  }
   if(!isset($_SESSION["id"]) === true) {
     include('includes/sign-in-modal.php');
+    include('includes/sign-up-modal.php');
     $session='none';
   }
 ?>
@@ -26,9 +22,12 @@
     <header id="header" class="fixed-top <?=$headerClass?>">
       <div class="container d-flex align-items-center justify-content-between">
 
-        <h1 class="logo"><a href="index.html">Tempo</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <a href="index.php" class="logo"></a>
+        <h1 class="logo">
+          <a href="index.php">
+            <img src="assets/img/logo.png" alt="Logo" class="img-fluid">Egalitarian
+          </a>
+        </h1>
 
         <nav id="navbar" class="navbar">
           <ul>
@@ -42,14 +41,19 @@
                 <li><a class="nav-link scrollto " href="<?=$file?>#portfolio">Portfolio</a></li>
                 <li><a class="nav-link scrollto" href="<?=$file?>#team">Team</a></li>
                 <li><a class="nav-link scrollto" href="<?=$file?>#contact">Contact Us</a></li>
+                <hr />
                 <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-signin">Login</a></li>
-                <li><a class="nav-link <?=$register_active?>" href="#">Register</a></li>';
+                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-signup">Register</a></li>';
               }
               else {
                 echo '
-                <li><a class="nav-link" href=profile.php">My Profile</a></li>
-                <li><a class="nav-link" href="#">My Conacts</a></li>
-                <li><a class="nav-link" href="msgs.php">Messages</a></li>';
+                <li><a class="nav-link" href="profile.php">My Profile</a></li>
+                <li><a class="nav-link" href="contacts.php">My Conacts</a></li>
+                <li><a class="nav-link" href="msgs.php">Messages</a></li>
+                <li><a class="nav-link" href="add-contact.php">Add New Contact</a></li>
+                <li><a class="nav-link" href="location.php">Change Status</a></li>
+                <hr />
+                <li><a class="nav-link" href="log-out.php">Log-out<i class="bi bi-box-arrow-right"></i></a></li>';
               }
             ?>
           </ul>

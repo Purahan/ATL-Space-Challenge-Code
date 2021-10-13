@@ -10,6 +10,12 @@
         <div class="modal-body pt-3">
             <p class="fs-ms modal-p" style="color: #9e9fb4 !important;">Sign in to your account using email and password provided during registration.</p>
             <form class="needs-validation mb-4" action="#" method="post" >
+                <?php if(!empty($error)) { ?>						
+                    <div class="error alert alert-danger">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <?php echo $error;?>
+                    </div>
+                <?php } ?>
                 <div class="mb-3">
                     <div class="input-group">
                         <i class="far fa-envelope position-absolute top-50 start-0 translate-middle-y ms-2" style="z-index: 10;"></i>
@@ -37,7 +43,7 @@
                     <a id="forgot" class="nav-link-style fs-ms" href="#">Forgot password?</a>
                 </div>
                 <button class="btn btn-pink d-block w-100" type="submit">Sign in</button>
-                <p class="fs-sm pt-3 mb-0">Don't have an account? <a href="#" class="fw-medium modal-a" data-view="#modal-signup-view">Sign up</a></p>
+                <p class="fs-sm pt-3 mb-0">Don't have an account? <a href="index.php" class="fw-medium modal-a">Sign up</a></p>
             </form>
         </div>
       </div>
